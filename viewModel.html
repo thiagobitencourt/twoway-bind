@@ -12,10 +12,15 @@
     <section class="container">
       <h1>Model View Bind</h1>
       
-      
-      
+      <label>Nome:</label>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Insira seu nome..." ng-model="nome">
+      </div>
+
+      <h1>Olá {{ nome }}!</h1>
+
     </section>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
   </body>
 </html>
