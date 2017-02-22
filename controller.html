@@ -6,14 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+      .top-15 { margin-top: 15px; }
+    </style>
   </head>
-  <body ng-controller="appController">
+  <body>
 
-    <section class="container">
+    <section class="container" ng-controller="appController">
       <h1>Bind com Controller</h1>
       
-      
-      
+      <label class="top-15">Valor A</label>
+      <div class="input-group">
+        <input type="number" class="form-control" ng-model="valorA">
+      </div>
+
+      <label class="top-15">Valor B</label>
+      <div class="input-group">
+        <input type="number" class="form-control" ng-model="valorB">
+      </div>
+
+      <div style="margin-top: 15px;">
+        <button type="button" class="btn btn-primary" ng-click="somar()">Somar</button>
+      </div>
+
+      <hr>
+      <h1>Resultado: {{ resultado }} </h1>
+
+      <a href="/" class="btn btn-link"><< Voltar</a>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
@@ -22,7 +41,11 @@
         app.controller('appController', appController);
 
         function appController($scope) {
-          console.log('controller iniciado');
+
+          $scope.somar = function() {
+            $scope.resultado = $scope.valorA + $scope.valorB;
+          }
+
         };
     </script>
   </body>
